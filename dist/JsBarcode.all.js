@@ -33,16 +33,18 @@
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 
-/******/ 	// identity function for calling harmory imports with the correct context
+/******/ 	// identity function for calling harmony imports with the correct context
 /******/ 	__webpack_require__.i = function(value) { return value; };
 
-/******/ 	// define getter function for harmory exports
+/******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
-/******/ 		Object.defineProperty(exports, name, {
-/******/ 			configurable: false,
-/******/ 			enumerable: true,
-/******/ 			get: getter
-/******/ 		});
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
 /******/ 	};
 
 /******/ 	// getDefaultExport function for compatibility with non-harmony modules
@@ -61,15 +63,15 @@
 /******/ 	__webpack_require__.p = "";
 
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 41);
+/******/ 	return __webpack_require__(__webpack_require__.s = 42);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -87,12 +89,12 @@ var Barcode = function Barcode(data, options) {
 
 exports.default = Barcode;
 
-/***/ },
+/***/ }),
 /* 1 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -153,12 +155,12 @@ var EANencoder = function () {
 
 exports.default = EANencoder;
 
-/***/ },
+/***/ }),
 /* 2 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -227,12 +229,12 @@ function addZeroes(number, n) {
 
 exports.default = MSI;
 
-/***/ },
+/***/ }),
 /* 3 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -256,12 +258,12 @@ function merge(old, replaceObj) {
 	return newMerge;
 }
 
-/***/ },
+/***/ }),
 /* 4 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -511,12 +513,12 @@ var InvalidStartCharacterException = function (_Error) {
 
 exports.default = CODE128;
 
-/***/ },
+/***/ }),
 /* 5 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -546,12 +548,12 @@ function mod11(number) {
 	return (11 - sum % 11) % 11;
 }
 
-/***/ },
+/***/ }),
 /* 6 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -619,12 +621,12 @@ exports.InvalidInputException = InvalidInputException;
 exports.InvalidElementException = InvalidElementException;
 exports.NoElementException = NoElementException;
 
-/***/ },
+/***/ }),
 /* 7 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -652,12 +654,12 @@ function optionsFromStrings(options) {
 	return options;
 }
 
-/***/ },
+/***/ }),
 /* 8 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -686,12 +688,12 @@ var defaults = {
 
 exports.default = defaults;
 
-/***/ },
+/***/ }),
 /* 9 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -783,12 +785,12 @@ exports.getBarcodePadding = getBarcodePadding;
 exports.calculateEncodingAttributes = calculateEncodingAttributes;
 exports.getTotalWidthOfEncodings = getTotalWidthOfEncodings;
 
-/***/ },
+/***/ }),
 /* 10 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -804,11 +806,13 @@ var _ITF = __webpack_require__(29);
 
 var _ITF2 = __webpack_require__(28);
 
-var _MSI = __webpack_require__(34);
+var _MSI = __webpack_require__(35);
 
-var _pharmacode = __webpack_require__(36);
+var _pharmacode = __webpack_require__(37);
 
-var _codabar = __webpack_require__(35);
+var _codabar = __webpack_require__(36);
+
+var _KIX = __webpack_require__(30);
 
 var _GenericBarcode = __webpack_require__(27);
 
@@ -821,15 +825,16 @@ exports.default = {
 	MSI: _MSI.MSI, MSI10: _MSI.MSI10, MSI11: _MSI.MSI11, MSI1010: _MSI.MSI1010, MSI1110: _MSI.MSI1110,
 	pharmacode: _pharmacode.pharmacode,
 	codabar: _codabar.codabar,
+	KIX: _KIX.KIX,
 	GenericBarcode: _GenericBarcode.GenericBarcode
 };
 
-/***/ },
+/***/ }),
 /* 11 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -878,12 +883,12 @@ var ErrorHandler = function () {
 
 exports.default = ErrorHandler;
 
-/***/ },
+/***/ }),
 /* 12 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -901,22 +906,22 @@ function fixOptions(options) {
 	return options;
 }
 
-/***/ },
+/***/ }),
 /* 13 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _getOptionsFromElement = __webpack_require__(37);
+var _getOptionsFromElement = __webpack_require__(38);
 
 var _getOptionsFromElement2 = _interopRequireDefault(_getOptionsFromElement);
 
-var _renderers = __webpack_require__(39);
+var _renderers = __webpack_require__(40);
 
 var _renderers2 = _interopRequireDefault(_renderers);
 
@@ -1008,12 +1013,12 @@ function newCanvasRenderProperties(imgElement) {
 
 exports.default = getRenderProperties;
 
-/***/ },
+/***/ }),
 /* 14 */
-/***/ function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1041,12 +1046,12 @@ function linearizeEncodings(encodings) {
 	return linearEncodings;
 }
 
-/***/ },
+/***/ }),
 /* 15 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1082,12 +1087,12 @@ var CODE128A = function (_CODE) {
 
 exports.default = CODE128A;
 
-/***/ },
+/***/ }),
 /* 16 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1123,12 +1128,12 @@ var CODE128B = function (_CODE) {
 
 exports.default = CODE128B;
 
-/***/ },
+/***/ }),
 /* 17 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1164,12 +1169,12 @@ var CODE128C = function (_CODE) {
 
 exports.default = CODE128C;
 
-/***/ },
+/***/ }),
 /* 18 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1284,12 +1289,12 @@ function autoSelectFromC(string) {
 
 exports.default = CODE128AUTO;
 
-/***/ },
+/***/ }),
 /* 19 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -1319,12 +1324,12 @@ exports.CODE128A = _CODE128A2.default;
 exports.CODE128B = _CODE128B2.default;
 exports.CODE128C = _CODE128C2.default;
 
-/***/ },
+/***/ }),
 /* 20 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1424,12 +1429,12 @@ function mod43checksum(data) {
 
 exports.CODE39 = CODE39;
 
-/***/ },
+/***/ }),
 /* 21 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1608,12 +1613,12 @@ function checksum(number) {
 
 exports.default = EAN13;
 
-/***/ },
+/***/ }),
 /* 22 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1675,12 +1680,12 @@ var EAN2 = function (_Barcode) {
 
 exports.default = EAN2;
 
-/***/ },
+/***/ }),
 /* 23 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1753,12 +1758,12 @@ var EAN5 = function (_Barcode) {
 
 exports.default = EAN5;
 
-/***/ },
+/***/ }),
 /* 24 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -1855,12 +1860,12 @@ function checksum(number) {
 
 exports.default = EAN8;
 
-/***/ },
+/***/ }),
 /* 25 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2018,12 +2023,12 @@ function checksum(number) {
 
 exports.default = UPC;
 
-/***/ },
+/***/ }),
 /* 26 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -2058,12 +2063,12 @@ exports.EAN5 = _EAN6.default;
 exports.EAN2 = _EAN8.default;
 exports.UPC = _UPC2.default;
 
-/***/ },
+/***/ }),
 /* 27 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2113,12 +2118,12 @@ var GenericBarcode = function (_Barcode) {
 
 exports.GenericBarcode = GenericBarcode;
 
-/***/ },
+/***/ }),
 /* 28 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2205,12 +2210,12 @@ var ITF = function (_Barcode) {
 
 exports.ITF = ITF;
 
-/***/ },
+/***/ }),
 /* 29 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2314,12 +2319,90 @@ function checksum(data) {
 
 exports.ITF14 = ITF14;
 
-/***/ },
+/***/ }),
 /* 30 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
+
+Object.defineProperty(exports, "__esModule", {
+	value: true
+});
+exports.KIX = undefined;
+
+var _Barcode2 = __webpack_require__(0);
+
+var _Barcode3 = _interopRequireDefault(_Barcode2);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; } // Encoding documentation:
+// https://nl.wikipedia.org/wiki/KIX-code
+
+var KIX = function (_Barcode) {
+	_inherits(KIX, _Barcode);
+
+	function KIX(data, options) {
+		_classCallCheck(this, KIX);
+
+		data = data.toUpperCase();
+
+		return _possibleConstructorReturn(this, _Barcode.call(this, data, options));
+	}
+
+	KIX.prototype.encode = function encode() {
+		var result = "";
+
+		// Take every character and add the binary representation to the result
+		for (var i = 0; i < this.data.length; i++) {
+			result += getEncoding(this.data[i]);
+		}
+
+		return {
+			data: result,
+			text: this.text
+		};
+	};
+
+	KIX.prototype.valid = function valid() {
+		return this.data.search(/^[0-9A-Z]+$/) !== -1;
+	};
+
+	return KIX;
+}(_Barcode3.default);
+
+// All characters. The position in the array is the (checksum) value
+
+
+var characters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+
+// The decimal representation of the characters, is converted to the
+// corresponding binary with the getEncoding function
+var encodings = ["00001111", "00011011", "00011110", "01001011", "01001110", "01011010", "00100111", "00110011", "00110110", "01100011", "01100110", "01110010", "00101101", "00111001", "00111100", "01101001", "01101100", "01111000", "10000111", "10010011", "10010110", "11000011", "11000110", "11010010", "10001101", "10011001", "10011100", "11001001", "11001100", "11011000", "10100101", "10110001", "10110100", "11100001", "11100100", "11110000"];
+
+// Get the binary representation of a character by converting the encodings
+// from decimal to binary
+function getEncoding(character) {
+	return encodings[characterValue(character)];
+}
+
+function characterValue(character) {
+	return characters.indexOf(character);
+}
+
+exports.KIX = KIX;
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2353,12 +2436,12 @@ var MSI10 = function (_MSI) {
 
 exports.default = MSI10;
 
-/***/ },
-/* 31 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2394,12 +2477,12 @@ var MSI1010 = function (_MSI) {
 
 exports.default = MSI1010;
 
-/***/ },
-/* 32 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2433,12 +2516,12 @@ var MSI11 = function (_MSI) {
 
 exports.default = MSI11;
 
-/***/ },
-/* 33 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 34 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2474,12 +2557,12 @@ var MSI1110 = function (_MSI) {
 
 exports.default = MSI1110;
 
-/***/ },
-/* 34 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
   value: true
@@ -2490,19 +2573,19 @@ var _MSI = __webpack_require__(2);
 
 var _MSI2 = _interopRequireDefault(_MSI);
 
-var _MSI3 = __webpack_require__(30);
+var _MSI3 = __webpack_require__(31);
 
 var _MSI4 = _interopRequireDefault(_MSI3);
 
-var _MSI5 = __webpack_require__(32);
+var _MSI5 = __webpack_require__(33);
 
 var _MSI6 = _interopRequireDefault(_MSI5);
 
-var _MSI7 = __webpack_require__(31);
+var _MSI7 = __webpack_require__(32);
 
 var _MSI8 = _interopRequireDefault(_MSI7);
 
-var _MSI9 = __webpack_require__(33);
+var _MSI9 = __webpack_require__(34);
 
 var _MSI10 = _interopRequireDefault(_MSI9);
 
@@ -2514,12 +2597,12 @@ exports.MSI11 = _MSI6.default;
 exports.MSI1010 = _MSI8.default;
 exports.MSI1110 = _MSI10.default;
 
-/***/ },
-/* 35 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 36 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2605,12 +2688,12 @@ var codabar = function (_Barcode) {
 
 exports.codabar = codabar;
 
-/***/ },
-/* 36 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 37 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2678,12 +2761,12 @@ var pharmacode = function (_Barcode) {
 
 exports.pharmacode = pharmacode;
 
-/***/ },
-/* 37 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2725,12 +2808,12 @@ function getOptionsFromElement(element) {
 
 exports.default = getOptionsFromElement;
 
-/***/ },
-/* 38 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 39 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2814,13 +2897,45 @@ var CanvasRenderer = function () {
 
 		ctx.fillStyle = options.lineColor;
 
-		for (var b = 0; b < binary.length; b++) {
-			var x = b * options.width + encoding.barcodePadding;
+		if (options.format !== "KIX") {
+			for (var b = 0; b < binary.length; b++) {
+				var x = b * options.width + encoding.barcodePadding;
 
-			if (binary[b] === "1") {
-				ctx.fillRect(x, yFrom, options.width, options.height);
-			} else if (binary[b]) {
-				ctx.fillRect(x, yFrom, options.width, options.height * binary[b]);
+				if (binary[b] === "1") {
+					ctx.fillRect(x, yFrom, options.width, options.height);
+				} else if (binary[b]) {
+					ctx.fillRect(x, yFrom, options.width, options.height * binary[b]);
+				}
+			}
+		} else {
+			var barRel = 1.9;
+			var syncRel = 1.3;
+			var full = 2 * barRel + syncRel;
+
+			var ratio = options.height / full;
+			var barAbs = Math.round(barRel * ratio);
+			var syncAbs = Math.round(syncRel * ratio);
+
+			for (var b = 0; b < binary.length; b += 2) {
+				// Don't divide by 2, since we need spacing in between bars
+				x = b * options.width + encoding.barcodePadding;
+				var barWidth = 1;
+				var height = syncAbs;
+				var y = yFrom;
+
+				// Check upper bit
+				if (binary[b] === "1") {
+					height += barAbs;
+				} else {
+					y += barAbs;
+				}
+
+				// Check lower bit
+				if (binary[b + 1] === "1") {
+					height += barAbs;
+				}
+
+				ctx.fillRect(x - options.width * barWidth, y, options.width * barWidth, height);
 			}
 		}
 	};
@@ -2879,22 +2994,22 @@ var CanvasRenderer = function () {
 
 exports.default = CanvasRenderer;
 
-/***/ },
-/* 39 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 40 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _canvas = __webpack_require__(38);
+var _canvas = __webpack_require__(39);
 
 var _canvas2 = _interopRequireDefault(_canvas);
 
-var _svg = __webpack_require__(40);
+var _svg = __webpack_require__(41);
 
 var _svg2 = _interopRequireDefault(_svg);
 
@@ -2902,12 +3017,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 exports.default = { CanvasRenderer: _canvas2.default, SVGRenderer: _svg2.default };
 
-/***/ },
-/* 40 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 41 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-"use strict";
+
 
 Object.defineProperty(exports, "__esModule", {
 	value: true
@@ -2984,20 +3099,52 @@ var SVGRenderer = function () {
 
 		var barWidth = 0;
 		var x = 0;
-		for (var b = 0; b < binary.length; b++) {
-			x = b * options.width + encoding.barcodePadding;
+		if (options.format !== "KIX") {
+			for (var b = 0; b < binary.length; b++) {
+				x = b * options.width + encoding.barcodePadding;
 
-			if (binary[b] === "1") {
-				barWidth++;
-			} else if (barWidth > 0) {
-				drawRect(x - options.width * barWidth, yFrom, options.width * barWidth, options.height, parent);
-				barWidth = 0;
+				if (binary[b] === "1") {
+					barWidth++;
+				} else if (barWidth > 0) {
+					drawRect(x - options.width * barWidth, yFrom, options.width * barWidth, options.height, parent);
+					barWidth = 0;
+				}
 			}
-		}
 
-		// Last draw is needed since the barcode ends with 1
-		if (barWidth > 0) {
-			drawRect(x - options.width * (barWidth - 1), yFrom, options.width * barWidth, options.height, parent);
+			// Last draw is needed since the barcode ends with 1
+			if (barWidth > 0) {
+				drawRect(x - options.width * (barWidth - 1), yFrom, options.width * barWidth, options.height, parent);
+			}
+		} else {
+			var barRel = 1.9;
+			var syncRel = 1.3;
+			var full = 2 * barRel + syncRel;
+
+			var ratio = options.height / full;
+			var barAbs = Math.round(barRel * ratio);
+			var syncAbs = Math.round(syncRel * ratio);
+
+			for (var b = 0; b < binary.length; b += 2) {
+				// Don't divide by 2, since we need spacing in between bars
+				x = b * options.width + encoding.barcodePadding;
+				var barWidth = 1;
+				var height = syncAbs;
+				var y = yFrom;
+
+				// Check upper bit
+				if (binary[b] === "1") {
+					height += barAbs;
+				} else {
+					y += barAbs;
+				}
+
+				// Check lower bit
+				if (binary[b + 1] === "1") {
+					height += barAbs;
+				}
+
+				drawRect(x - options.width * barWidth, y, options.width * barWidth, height, parent);
+			}
 		}
 	};
 
@@ -3085,12 +3232,12 @@ function drawRect(x, y, width, height, parent) {
 
 exports.default = SVGRenderer;
 
-/***/ },
-/* 41 */
-/***/ function(module, exports, __webpack_require__) {
+/***/ }),
+/* 42 */
+/***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-'use strict';
+
 
 var _barcodes = __webpack_require__(10);
 
@@ -3340,5 +3487,5 @@ if (typeof jQuery !== 'undefined') {
 // Export to commonJS
 module.exports = JsBarcode;
 
-/***/ }
+/***/ })
 /******/ ]);

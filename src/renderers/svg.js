@@ -63,21 +63,55 @@ class SVGRenderer{
 
 		var barWidth = 0;
 		var x = 0;
-		for(var b = 0; b < binary.length; b++){
-			x = b * options.width + encoding.barcodePadding;
+		if (options.format !== "KIX") {
+			for(var b = 0; b < binary.length; b++){
+				x = b * options.width + encoding.barcodePadding;
 
-			if(binary[b] === "1"){
-				barWidth++;
+				if(binary[b] === "1"){
+					barWidth++;
+				}
+				else if(barWidth > 0){
+					drawRect(x - options.width * barWidth, yFrom, options.width * barWidth, options.height, parent);
+					barWidth = 0;
+				}
 			}
-			else if(barWidth > 0){
-				drawRect(x - options.width * barWidth, yFrom, options.width * barWidth, options.height, parent);
-				barWidth = 0;
+
+			// Last draw is needed since the barcode ends with 1
+			if(barWidth > 0){
+				drawRect(x - options.width * (barWidth - 1), yFrom, options.width * barWidth, options.height, parent);
 			}
 		}
+		else {
+			var barRel = 1.9;
+			var syncRel = 1.3;
+			var full = 2 * barRel + syncRel;
 
-		// Last draw is needed since the barcode ends with 1
-		if(barWidth > 0){
-			drawRect(x - options.width * (barWidth - 1), yFrom, options.width * barWidth, options.height, parent);
+			var ratio = options.height / full;
+			var barAbs = Math.round(barRel * ratio);
+			var syncAbs = Math.round(syncRel * ratio);
+
+			for(var bKix = 0; bKix < binary.length; bKix += 2) {
+				// Don't divide by 2, since we need spacing in between bars
+				x = bKix * options.width + encoding.barcodePadding;
+				barWidth = 1;
+				var height = syncAbs;
+				var y = yFrom;
+
+				// Check upper bit
+				if (binary[bKix] === "1") {
+					height += barAbs;
+				}
+				else {
+					y += barAbs;
+				}
+
+				// Check lower bit
+				if (binary[bKix + 1] === "1") {
+					height += barAbs;
+				}
+
+				drawRect(x - options.width * barWidth, y, options.width * barWidth, height, parent);
+			}
 		}
 	}
 

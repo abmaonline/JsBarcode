@@ -82,13 +82,45 @@ var CanvasRenderer = function () {
 
 		ctx.fillStyle = options.lineColor;
 
-		for (var b = 0; b < binary.length; b++) {
-			var x = b * options.width + encoding.barcodePadding;
+		if (options.format !== "KIX") {
+			for (var b = 0; b < binary.length; b++) {
+				var x = b * options.width + encoding.barcodePadding;
 
-			if (binary[b] === "1") {
-				ctx.fillRect(x, yFrom, options.width, options.height);
-			} else if (binary[b]) {
-				ctx.fillRect(x, yFrom, options.width, options.height * binary[b]);
+				if (binary[b] === "1") {
+					ctx.fillRect(x, yFrom, options.width, options.height);
+				} else if (binary[b]) {
+					ctx.fillRect(x, yFrom, options.width, options.height * binary[b]);
+				}
+			}
+		} else {
+			var barRel = 1.9;
+			var syncRel = 1.3;
+			var full = 2 * barRel + syncRel;
+
+			var ratio = options.height / full;
+			var barAbs = Math.round(barRel * ratio);
+			var syncAbs = Math.round(syncRel * ratio);
+
+			for (var b = 0; b < binary.length; b += 2) {
+				// Don't divide by 2, since we need spacing in between bars
+				x = b * options.width + encoding.barcodePadding;
+				var barWidth = 1;
+				var height = syncAbs;
+				var y = yFrom;
+
+				// Check upper bit
+				if (binary[b] === "1") {
+					height += barAbs;
+				} else {
+					y += barAbs;
+				}
+
+				// Check lower bit
+				if (binary[b + 1] === "1") {
+					height += barAbs;
+				}
+
+				ctx.fillRect(x - options.width * barWidth, y, options.width * barWidth, height);
 			}
 		}
 	};

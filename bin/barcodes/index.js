@@ -20,6 +20,8 @@ var _pharmacode = require('./pharmacode/');
 
 var _codabar = require('./codabar');
 
+var _KIX = require('./KIX/');
+
 var _GenericBarcode = require('./GenericBarcode/');
 
 exports.default = {
@@ -31,5 +33,6 @@ exports.default = {
 	MSI: _MSI.MSI, MSI10: _MSI.MSI10, MSI11: _MSI.MSI11, MSI1010: _MSI.MSI1010, MSI1110: _MSI.MSI1110,
 	pharmacode: _pharmacode.pharmacode,
 	codabar: _codabar.codabar,
+	KIX: _KIX.KIX,
 	GenericBarcode: _GenericBarcode.GenericBarcode
 };
