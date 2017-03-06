@@ -40,8 +40,8 @@
     "barcodeFile": "./codabar"
   },
   {
-    "name": "kix",
-    "names": "KIX",
-    "barcodeFile": "./KIX"
+    "name": "postalcodes",
+    "names": "base3, KIX",
+    "barcodeFile": "./PostalCodes"
   }
 ]

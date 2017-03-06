@@ -1,9 +1,9 @@
 // Encoding documentation:
-// https://nl.wikipedia.org/wiki/KIX-code
+// https://en.wikipedia.org/wiki/RM4SCC
 
 import Barcode from "../Barcode.js";
 
-class KIX extends Barcode {
+class base3 extends Barcode {
 	constructor(data, options){
 		data = data.toUpperCase();
 		super(data, options);
@@ -31,7 +31,7 @@ class KIX extends Barcode {
 	}
 
 	valid(){
-		return this.data.search(/^[0-9A-Z]+$/) !== -1;
+		return this.data.search(/^[\(\[]{0,1}[0-9A-Z]+[\)\]]{0,1}$/) !== -1;
 	}
 }
 
@@ -46,6 +46,7 @@ const encodings = {
 	"O":[2, 0, 3, 1], "P":[2, 1, 2, 1], "Q":[2, 1, 3, 0], "R":[3, 0, 2, 1],
 	"S":[3, 0, 3, 0], "T":[3, 1, 2, 0], "U":[2, 2, 1, 1], "V":[2, 3, 0, 1],
 	"W":[2, 3, 1, 0], "X":[3, 2, 0, 1], "Y":[3, 2, 1, 0], "Z":[3, 3, 0, 0],
+	"(":[2], ")":[3], "[":[2], "]":[3],
 };
 
 function getBarTypes(syncHeight){
@@ -57,5 +58,4 @@ function getBarTypes(syncHeight){
 	};
 }
 
-
-export {KIX};
+export default base3;
